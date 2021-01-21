@@ -4,6 +4,6 @@
 - We can use 'this' keyword to access variables and methods and constructors of objects.<br/>
 - The 'this' keyword always points to an object's own instance.<br/>
 - The use of 'this' keyword is optional, Except when an instance variable has the same name as local variable or method parameter.<br/>
-- We can use 'this' keyword to call an object's constructor, in that case the use of 'this' must be in the first line within a constructor.<br/>
-- We can use 'this' keyword in an interface's default method to access constants and methods of that interface (since java8).<br/>
+- You can use 'this' keyword to call an object's constructor, in that case the use of 'this' must be in the first line within a constructor.<br/>
+- You can use 'this' keyword in an interface's default method to access constants and methods of that interface (since java8).<br/>
 - You can't use 'this' keyword in static methods of a class or an interface, because static methods belongs to classes, while 'this' refers to objects.<br/>
