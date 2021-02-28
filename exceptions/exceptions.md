@@ -99,3 +99,17 @@ If somthing went's wrong the logic in 'catch' blocks will be executed, according
 
 - Throws informs the calling methods that this method throws an exception, that must be handled or rethrown.
 - Throw keyword do the actual exception throwing.
+- Method signature can have multiple exceptions declarations, separated by comma.
+- Method signature can have Runtime and Error exceptions, by it's optional.
+- It's prefered to declare runtime and error exception at documentation.
+
+## Handle-or-declare rule
+
+- To use a method that throws a checked exception, you must either handle the exception or declare it to be thrown.
+- You can do both, handle the exception and declare it to be thrown.
+- The act of handling the exception ordeclaring it to be thrown is called the rule of 'handle-or-declare'.
+- You can't use 'handle-or-declare' rule with Runtime and Error exceptions. This rule applies only to checked exceptions.
+- If you don't apply this rule, you will get a compilation error.
+- The declaration of Runtime and Error exceptions in 'throws' and 'throw' statements is optional.
+- A method can be declared to throw any type of exception checked or unchecked.
+- A 'try/catch' block can catch checked exceptions other than 'Exception' if the 'try' block throw that exception, or calls a method that throws that exception.
