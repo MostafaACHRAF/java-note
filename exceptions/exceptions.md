@@ -113,3 +113,6 @@ If somthing went's wrong the logic in 'catch' blocks will be executed, according
 - The declaration of Runtime and Error exceptions in 'throws' and 'throw' statements is optional.
 - A method can be declared to throw any type of exception checked or unchecked.
 - A 'try/catch' block can catch checked exceptions other than 'Exception' if the 'try' block throw that exception, or calls a method that throws that exception.
+- A 'try/catch' can have multiple catch blocks but only one 'finaly' block.
+- 'finaly' block must be always the last block.
+- I you don't apply 'handle-or-declare' rule, an exception is risen.

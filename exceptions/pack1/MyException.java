@@ -28,7 +28,7 @@ public class MyException {
         }
     }
 
-    // This method won't compile because the try catch handle a checked exception 'fileNotFound' without throwing it, or calling a method that throw it!
+    // This method won't compile because the try catch handle a checked exception 'fileNotFound' without throwing it, or calling a method that throws it!
     /*public void fun8() {
         try {
             System.out.println("Get file...");
@@ -36,4 +36,3 @@ public class MyException {
             System.out.println(e.getMessage());
         }
     }*/
-}
