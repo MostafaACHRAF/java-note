@@ -116,3 +116,23 @@ If somthing went's wrong the logic in 'catch' blocks will be executed, according
 - A 'try/catch' can have multiple catch blocks but only one 'finaly' block.
 - 'finaly' block must be always the last block.
 - I you don't apply 'handle-or-declare' rule, an exception is risen.
+- You don't have to handle-or-declare Runtime exceptions.
+- You can declare or handle Runtime exception, though the prefered way is to use appropriate (if/else) tests.
+- The 'finally' block will still be executed even if the 'try' block or one the 'catch' blocks define a 'return' statement.
+- After executing the 'finally' block. If the 'try' block or one of the 'catch' blocks define a 'return' statement, the control will be returned to that line, and the code after 'finally' block will not be executed.
+- If you declare a return statement in 'try' block and in all your catch blocks, all statements after 'try/catch' block will never be executed, so the compilation error 'unreachable statement' is thrown.
+- Normally the 'finally' block will always be executed, except when encountering 'System.exit' statement which immediately terminates the application. Or when a crash of the JVM or OS occurs.
+- If both 'finally' and 'catch' blocks returns a value, the 'return' statement of 'finally' block will be executed.
+- If there is 'return' statement into 'finally' block, that return statement will be executed.
+- The 'finally' block can't modifiy the value of primitive vairables. Because primitive variables are passed by value not by reference.
+- The 'finally' block can modifiy the value of reference variables. Because reference variables are passed by reference not by value.
+- You can declare a 'try' block followed by'finally' block without worring about compilation errors. But only if the try block doesn't throw a checked exception.
+- If a 'try' block throws a checked exception, you either have to declare the exception into method's signature, or handle it using 'catch' block.
+- The order of caught exceptions in the catch blocks matters. You can't catch 'base class exception' before catching 'derived class exception' because the 'derived class exception' will never be reached. So a compilation error arise.
+- Java compiler doesn't allow 'unreachable' statements.
+- In the catch block you can do anything with catched exception.
+- In the catch block you can rethrow a checked exception, but to prevent compilation errors you must either surround the exception with 'try/catch' or declare it in method's signature.
+- In the catch block you can rethrow unchecked exceptions without caring about handling or declaring them.
+- You can declare a method to declare checked exceptions if you don't wich to handle the checked exception within that method.
+- If you try to handle a checked exception without having a code that trow that exception, you will get the following compilation error: 'EXCEPTION_NAME is never thrown'
+- You can handle JVM errors, but we can't be sure that the exception will be handled, for example you can't catch 'VirtualMachineError', but you can handle 'StackOverflowError'.
