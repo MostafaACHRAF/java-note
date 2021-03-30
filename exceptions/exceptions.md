@@ -136,3 +136,4 @@ If somthing went's wrong the logic in 'catch' blocks will be executed, according
 - You can declare a method to declare checked exceptions if you don't wich to handle the checked exception within that method.
 - If you try to handle a checked exception without having a code that trow that exception, you will get the following compilation error: 'EXCEPTION_NAME is never thrown'
 - You can handle JVM errors, but we can't be sure that the exception will be handled, for example you can't catch 'VirtualMachineError', but you can handle 'StackOverflowError'.
+- You can propagate exception till you reach the main method without having any compilation errors.
