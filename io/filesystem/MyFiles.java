@@ -6,7 +6,8 @@ import java.time.Instant;
 import java.nio.file.Path;
 import java.io.IOException;
 
-public class MyFiles {
+//A top level class/interface can have the default access modifier or public access modifier only. Otherwise a compilation error is thrown.
+ class MyFiles {
     public static void main(String... args) {
         //there is a method to create directories: Files.createDirectories(Path.of("/users/test/file.txt"))
         //Files.nonExists(Path.of(".")): check if a file/folder exists. A similar method is 'exists'
