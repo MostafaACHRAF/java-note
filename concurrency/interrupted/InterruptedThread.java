@@ -9,7 +9,7 @@ public class InterruptedThread {
             System.out.println("Initial state => " + t.getState());
             while(!t.isInterrupted()) {
                 try {
-                    Thread.sleep(1000); // if interrupt signal is received at that stage => the method 'sleep' will be interrupted and will throw and exceptio' will be interrupted and will throw and exceptio' will be interrupted and will throw and exception.
+                    Thread.sleep(1000); // if interrupt signal is received at that stage => the method 'sleep' will be interrupted and will throw and exception.
                 } catch(InterruptedException e) {
                     System.out.println("Interrupted while sleeping!");
                     return;
