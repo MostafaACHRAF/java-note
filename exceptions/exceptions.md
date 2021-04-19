@@ -137,3 +137,17 @@ If somthing went's wrong the logic in 'catch' blocks will be executed, according
 - If you try to handle a checked exception without having a code that trow that exception, you will get the following compilation error: 'EXCEPTION_NAME is never thrown'
 - You can handle JVM errors, but we can't be sure that the exception will be handled, for example you can't catch 'VirtualMachineError', but you can handle 'StackOverflowError'.
 - You can propagate exception till you reach the main method without having any compilation errors.
+- You can catch 'Exception' even without calling a method or a code that throws 'Exception'.
+- You can't catch in the same line multiple exception that are subclassing each other. (Exception | FileNotFoundException)
+- You can't write a method that throws a base class exception and is declared to throw a derived class exception. This method won't compile.
+- If you handle an Error exception, your method can recover from that error, though its not supposed to.
+- If you delegate the handling of an exception to the calling method, all statements that follow the exception will never be reached even 'return' statement. If you do the code won't compile. 
+/*
+    public String print() throws Exception {
+        try {
+            throw new Exception("eee");
+        } finally {
+            System.out.println("kokokokok");
+        }
+    }
+*/
