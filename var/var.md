@@ -1,0 +1,8 @@
+- You can reference an non static interface in a static context.
+- var is not a reserved keyword, its a reserved type name, thus you can name your variables 'var' without compilation errors.
+- You can't use 'var' to create class fields and method parameters and arrays initialization.
+- You can't declare a 'var' without providing enough context, for example: (var i;) is not allowed. The compiler can't infer the type!
+- The compiler infers the type of the reference variable from the initialized on the right side: var i = 9;
+- You can't initialize a var with null
+- You can't use var as a method return type, or method parameter
+- You can't use var in compound declaration: var i, j = 0;
