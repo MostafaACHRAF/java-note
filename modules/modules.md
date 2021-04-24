@@ -68,3 +68,28 @@ bin/java --module my.pm/com.app.Main
 ```
 
 --module: name of the module and Main class.<br/>
+
+## Some rules
+- Private and protected fields and methods of an exported modules are not visible for other modules
+- Only public fields and methods are visible to other modules.
+- 'transient' means that a module is implicitly exported and implicitly required.
+module A {
+    exports pack1;
+}
+
+module B {
+    requires transitive A;
+    exports pack2;
+}
+
+module C {
+    requires B;//C will have access to pack2 and pack1 of A implicitly, because B requires A in a transitivity way, which means any module that requires B gets implicitly access to all exported packages of A too.
+}
+
+- java.base module doesn't depend on any other module, it contains the core packages of java. It's implicitly required in all modules.
+- You don't have to explicitly require 'java.base' module, its implicitly included.
+- 'exports' keyword indicate which package will be visible to all other modules.
+- 'exports...to' keyword indicate wich package will be visible to which specific module.
+- 'requires' indicates which module is required by your module
+- 'requires' indicates which module is required by your module, and the modules requiring your module will have implicit access to that transitive module.
+- cyclic dependencies are not allowed, Example: (A -> B & B -> A)
