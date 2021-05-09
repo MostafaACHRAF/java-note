@@ -3,6 +3,16 @@ package pack1;
 import java.util.Arrays;
 
 class A {
+    A() {
+        // this(0);
+        // super();//this and super keyword can't coexist because, each one must be the first statement!
+        this(0);
+    }
+
+    A(int a) {
+        // this();//won't compile: Recursive constructor invocation
+    }
+    int a;
     void m1(int a) {}
 }
 
@@ -44,5 +54,6 @@ public class Main {
         // b.m1((Integer)6.6);//won't compile
 
         System.out.println(args.length);
+        System.out.println(b.a);
     }
 }
