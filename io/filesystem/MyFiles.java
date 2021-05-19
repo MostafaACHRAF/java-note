@@ -21,9 +21,19 @@ import java.io.IOException;
             Files.createDirectory(Path.of("./root/img/datas")); //if you try to create folder and a subfolder at once you will get an exception: NoSuchFileException
             //If you try to create only one new folder no exceptions will be thrown.
 
+
             // Files.move(Path.of("symlinc"));
         } catch(IOException e) {
             System.out.println("Error!" + e);
+            Path datasFolder = Path.of("./root/img/datas");
+            System.out.println(datasFolder.resolve("../../"));
+            try {
+                // Files.createDirectories(Path.of("./root/img/datas/text/test"));
+                Files.createDirectory(Path.of("./root"));//if the folder already exist, a IOException thrown!
+            }
+            catch(IOException e1) {
+                System.out.println("Error");
+            }
         }
     }
 }
